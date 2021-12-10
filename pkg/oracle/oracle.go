@@ -32,7 +32,15 @@ type Dialector struct {
 }
 
 func Open(dsn string) gorm.Dialector {
-	return &Dialector{Config: &Config{DSN: dsn}}
+	conn, err := sql.Open("oracle", dsn)
+	if err != nil {
+		panic(err)
+	}
+	dialector := New(Config{
+		DriverName: "oracle",
+		Conn:       conn,
+	})
+	return dialector
 }
 
 func New(config Config) gorm.Dialector {

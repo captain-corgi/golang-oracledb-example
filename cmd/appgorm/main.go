@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/captain-corgi/golang-oracledb-example/pkg/oracle"
+	"gorm.io/gorm"
 )
 
 type Employees struct {
@@ -20,7 +21,11 @@ type Employees struct {
 
 func main() {
 	// Create connection
-	db := oracle.NewGorm()
+	dsn := "oracle://OT:yourpassword@localhost/ORCLPDB1.localdomain"
+	db, err := gorm.Open(oracle.Open(dsn), &gorm.Config{})
+	if err != nil {
+		panic("failed to connect database")
+	}
 
 	// Read
 	var employees []Employees
