@@ -45,4 +45,3 @@ vendor/github.com/sijms/go-ora/v2/network/summary_object.go
 vendor/github.com/sijms/go-ora/v2/network/security/general.go
 vendor/github.com/sijms/go-ora/v2/trace/trace.go
 vendor/github.com/sijms/go-ora/v2/trace/trace.go-e
-app
