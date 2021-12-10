@@ -10,6 +10,11 @@ Tutorals:
 Driver:
 > https://github.com/sijms/go-ora
 
+Custom Dialector for GORM references from:
+> https://github.com/CengSin/oracle
+
+Gorm (With my oracle custom dialector):
+> https://gorm.io/
 ## Note
 
 Container Database:
